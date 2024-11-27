@@ -1,0 +1,22 @@
+CREATE TABLE Orders (
+    Order_Id int NOT NULL,
+    Order_Name varchar(100) NOT NULL,
+    User_Id int NOT NULL,
+    Restaurant_Id int NOT NULL,
+    Driver_Id int NOT NULL,
+    Order_Date date NOT NULL,
+    Order_Total float NOT NULL,
+    Order_Delivery_Time time NOT NULL,
+    Order_Status varchar(100) NOT NULL,
+    Order_Payment_Id int NOT NULL,
+    Order_PickUp_Time time NOT NULL,
+    PRIMARY KEY (Order_Id),
+    KEY Orders_Users_FK (User_Id),
+    KEY Orders_Restaurants_FK (Restaurant_Id),
+    KEY Orders_Delivery_Drivers_FK (Driver_Id),
+    KEY Orders_Payments_FK (Order_Payment_Id),
+    CONSTRAINT Orders_Users_FK FOREIGN KEY (User_Id) REFERENCES Users (User_Id),
+    CONSTRAINT Orders_Restaurants_FK FOREIGN KEY (Restaurant_Id) REFERENCES Restaurants (Restaurant_Id),
+    CONSTRAINT Orders_Delivery_Drivers_FK FOREIGN KEY (Driver_Id) REFERENCES Delivery_Drivers (Driver_Id),
+    CONSTRAINT Orders_Payments_FK FOREIGN KEY (Order_Payment_Id) REFERENCES Order_Payments (Order_Payment_Id)
+);
