@@ -7,3 +7,5 @@ CREATE TABLE Assigns (
   CONSTRAINT Assigns_Orders_FK FOREIGN KEY (Order_Id) REFERENCES Orders (Order_Id),
   CONSTRAINT Assigns_Employee_FK FOREIGN KEY (Employee_Id) REFERENCES Employee (Employee_Id)
 );
+-- Chnage the table name to Assigns_Delivery_Drivers
+RENAME TABLE Assigns TO Assigns_Delivery_Drivers;
