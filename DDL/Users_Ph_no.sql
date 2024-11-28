@@ -4,3 +4,5 @@ Create Table Users_Ph_no (
   PRIMARY KEY (User_Id, Ph_No),
   CONSTRAINT Users_Ph_no_Users_FK FOREIGN KEY (User_Id) REFERENCES Users (User_Id)
 );
+
+

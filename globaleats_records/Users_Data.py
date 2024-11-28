@@ -40,27 +40,9 @@ def insert_fake_data(records_count):
     connection.commit()
     print(f"{records_count} records inserted successfully!")
 
-# Function to insert data into the MySQL table Users_Ph_no
-def insert_fake_phone_no(records_count):
-    for user_id in range(1, records_count + 1):
-        phone_no = fake.phone_number()
-        phone_no1 = fake.phone_number()
-
-        query = "INSERT INTO Users_Ph_no (User_Id, Ph_No) VALUES (%s, %s)"
-        values = (user_id, phone_no)
-        cursor.execute(query, values)
-
-        query1 = "INSERT INTO Users_Ph_no (User_Id, Ph_No) VALUES (%s, %s)"
-        values1 = (user_id, phone_no1)
-        cursor.execute(query1, values1)
-
-    connection.commit()
-    print(f"{records_count} records inserted successfully!")
 
 
-
-# insert_fake_data(100)
-#insert_fake_phone_no(110)
+insert_fake_data(10000)
 
 # Close the cursor and connection
 cursor.close()

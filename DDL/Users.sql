@@ -5,9 +5,7 @@ CREATE TABLE Users (
   Last_Name varchar(100) NOT NULL,
   DOB date NOT NULL,
   Gender binary(1) NOT NULL,
-  Street_Address varchar(100) NOT NULL,
-  City varchar(100) NOT NULL,
-  State_Address varchar(100) NOT NULL,
-  Pincode varchar(100) NOT NULL,
+  User_Address_Id int NOT NULL,
   PRIMARY KEY (User_Id)
 );
+ALTER TABLE Users ADD CONSTRAINT Users_Address_FK FOREIGN KEY (User_Address_Id) REFERENCES Address (Address_Id);
