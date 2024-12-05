@@ -6,6 +6,9 @@ CREATE TABLE Users (
   DOB date NOT NULL,
   Gender binary(1) NOT NULL,
   User_Address_Id int NOT NULL,
+  Created_At datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (User_Id)
 );
-ALTER TABLE Users ADD CONSTRAINT Users_Address_FK FOREIGN KEY (User_Address_Id) REFERENCES Address (Address_Id);
+
+
+-- Query to list details of restaurant owners who have signed up within the past three months
