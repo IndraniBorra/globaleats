@@ -7,3 +7,4 @@ CREATE TABLE Address (
   Zip_Code VARCHAR(255) NOT NULL,
   PRIMARY KEY (Address_Id)
 );
+ 
